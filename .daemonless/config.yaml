@@ -1,0 +1,10 @@
+# dbuild configuration — ffmpeg
+# Full reference: https://github.com/daemonless/dbuild
+build:
+  variants:
+    - tag: latest
+      containerfile: Containerfile
+
+cit:
+  mode: command
+  expect_output: 'ffmpeg version \d'
