@@ -12,7 +12,6 @@ x-daemonless:
   user: "bsd"
   upstream_binary: false
   mlock: false
-  community: "Discord:https://discord.gg/Kb9tkhecZT"
 
   docs:
     volumes:
