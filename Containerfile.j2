@@ -8,6 +8,7 @@ ARG BASE_TAG=15-pkg
 
 FROM ghcr.io/daemonless/base-core:${BASE_TAG}
 ARG FREEBSD_ARCH=amd64
+ARG PKG_NAME="ffmpeg"
 
 LABEL org.opencontainers.image.title="ffmpeg" \
       org.opencontainers.image.description="ffmpeg CLI (audio/video transcoding) on FreeBSD" \
@@ -17,9 +18,10 @@ LABEL org.opencontainers.image.title="ffmpeg" \
       org.opencontainers.image.vendor="daemonless" \
       org.opencontainers.image.authors="daemonless" \
       io.daemonless.category="Utilities" \
+      io.daemonless.pkg-name="${PKG_NAME}" \
       io.daemonless.arch="${FREEBSD_ARCH}"
 
-RUN pkg update && pkg install -y ffmpeg \
+RUN pkg update && pkg install -y ${PKG_NAME} \
     && ffmpeg -version | head -1 | grep -qE '^ffmpeg version 8\.' \
        || { echo "DRIFT: pkg ffmpeg is no longer major version 8 — re-verify the port"; exit 1; } \
     && pkg clean -ay && rm -rf /var/cache/pkg/*
