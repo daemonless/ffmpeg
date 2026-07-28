@@ -12,6 +12,7 @@ x-daemonless:
   user: "bsd"
   upstream_binary: false
   mlock: false
+  appjail: false
 
   docs:
     volumes:
