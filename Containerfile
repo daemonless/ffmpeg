@@ -30,6 +30,9 @@ LABEL org.opencontainers.image.title="ffmpeg" \
 RUN pkg update && pkg install -y ${PKG_NAME} \
     && ffmpeg -version | head -1 | grep -qE '^ffmpeg version 8\.' \
        || { echo "DRIFT: pkg ffmpeg is no longer major version 8 — re-verify the port"; exit 1; } \
+    && mkdir -p /app \
+    && pkg info ${PKG_NAME} | sed -n 's/.*Version.*: *//p' > /app/version \
+    && chmod -R a+rX /app \
     && pkg clean -ay && rm -rf /var/cache/pkg/*
 
 # /work is the conventional bind-mount point for media in/out; no other

@@ -19,7 +19,8 @@ FFmpeg CLI (audio/video transcoding) on FreeBSD.
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` | **FreeBSD Port**. Built from latest FreeBSD packages. | Most users — recommended. |
+| `pkg` | **FreeBSD Port**. Built from FreeBSD packages. | Most users — recommended. |
+| `latest` / `pkg-latest` | **FreeBSD Port**. Built from FreeBSD packages. | Production stability. |
 
 ## Deployment
 

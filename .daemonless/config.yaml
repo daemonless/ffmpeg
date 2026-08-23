@@ -2,8 +2,17 @@
 # Full reference: https://github.com/daemonless/dbuild
 build:
   variants:
-    - tag: latest
+    # pkg-based CLI: the single Containerfile installs ffmpeg from FreeBSD pkg.
+    # pkg = quarterly (base-core:15-pkg), pkg-latest = rolling (15-pkg-latest).
+    # `latest` is an alias of pkg-latest so the compose example keeps working.
+    - tag: pkg
       containerfile: Containerfile
+      default: true
+    - tag: pkg-latest
+      containerfile: Containerfile
+      args:
+        BASE_TAG: "15-pkg-latest"
+      aliases: ["latest"]
 
 cit:
   mode: command
