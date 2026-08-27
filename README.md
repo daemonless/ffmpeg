@@ -32,6 +32,8 @@ podman run --rm \
   ghcr.io/daemonless/ffmpeg:latest
 ```
 
+Save as `run.sh`, then run `sh run.sh`.
+
 ## Parameters
 
 ### Volumes
