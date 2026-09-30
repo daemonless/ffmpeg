@@ -29,7 +29,7 @@ FFmpeg CLI (audio/video transcoding) on FreeBSD.
 
 ```bash
 podman run --rm \
-  -v /path/to/containers/ffmpeg/work:/work \
+  -v /containers/ffmpeg/work:/work \
   ghcr.io/daemonless/ffmpeg:latest
 ```
 
