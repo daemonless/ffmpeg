@@ -30,7 +30,7 @@ FFmpeg CLI (audio/video transcoding) on FreeBSD.
 ```bash
 podman run --rm \
   -v /containers/ffmpeg/work:/work \
-  ghcr.io/daemonless/ffmpeg:latest
+  ghcr.io/daemonless/ffmpeg:pkg
 ```
 
 Save as `run.sh`, then run `sh run.sh`.
